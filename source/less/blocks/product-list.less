@@ -1,0 +1,25 @@
+.product-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.product-list__card {
+  padding-top: 20px;
+  padding-bottom: 25px;
+  border-top: 1px solid #EBEBEB;
+  border-bottom: 1px solid #EBEBEB;
+
+  @media (min-width: @tablet-width) {
+    background: linear-gradient(to bottom, transparent 81px, @grey-button 81px);
+    border: none;
+  }
+}
+
+.product-list__card--show-more {
+  @media (min-width: @tablet-width) {
+    margin-top: 80px;
+    background: none;
+    border: 2px solid @grey-button;
+  }
+}

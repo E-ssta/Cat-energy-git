@@ -1,0 +1,108 @@
+.show-more {
+  width: 280px;
+  margin: 0 auto;
+
+  @media (min-width: @tablet-width) {
+    width: 252px;
+    margin: 0 auto;
+
+    @media (min-width: @desktop-width) {
+      width: 245px;
+    }
+  }
+}
+
+.show-more__title {
+  position: relative;
+  font-family: "Oswald", serif;
+  font-weight: 400;
+  color: @grey-head-1;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 8px;
+  padding: 0;
+  padding-top: 53px;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    background-color: #D3D3D3;
+    height: 2px;
+    top: 15px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 30px;
+
+    @media (min-width: @tablet-width) {
+      width: 60px;
+      top: 62px;
+    }
+  }
+
+  &::after {
+    transform: rotate(90deg);
+  }
+
+  @media (min-width: @tablet-width) {
+    padding-top: 140px;
+    font-size: 20px;
+    line-height: 22px;
+    width: auto;
+    margin: 0 58px;
+    margin-bottom: 23px;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin-left: 55px;
+    margin-right: 55px;
+  }
+}
+
+.show-more__text {
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 21px;
+  padding: 0;
+
+  @media (min-width: @tablet-width) {
+    font-size: 16px;
+    line-height: 18px;
+    width: auto;
+    margin: 0 41px 87px;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin-left: 39px;
+    margin-right: 39px;
+  }
+}
+
+.show-more__button {
+  display: block;
+  width: 100%;
+  height: 40px;
+  padding: 0;
+
+  &:hover,
+  &:focus {
+    background-color: #EBEBEB;
+  }
+
+  &:active {
+    background-color: #EBEBEB;
+    color: fade(@grey-text-base, 30%);
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 69%;
+    margin-right: 38px;
+    margin-left: 38px;
+  }
+}

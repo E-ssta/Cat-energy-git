@@ -1,0 +1,23 @@
+.button-green {
+  display: inline-block;
+  background-color: @green-base;
+  font-family: "Oswald", serif;
+  font-weight: 400;
+  color: @white-base;
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+
+  &:hover,
+  &:focus {
+    background-color: @green-hover;
+  }
+
+  &:active {
+    background-color: @green-hover;
+    color: fade(@white-base, 30%);
+  }
+}

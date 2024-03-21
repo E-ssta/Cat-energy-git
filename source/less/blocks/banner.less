@@ -1,0 +1,52 @@
+.banner {
+  width: 280px;
+  height: 290px;
+  margin: 0 auto;
+  background-color: @green-base;
+  background-image: url("/img/icon-gift.svg"), url("/img/background-green.png"), url("/img/banner-background.jpg");
+  background-size: 78px 80px, 100% auto, 100% auto;
+  background-repeat: no-repeat, repeat, no-repeat;
+  background-position: 101px 58px, center, center;
+
+  @media (min-width: @tablet-width) {
+    width: 708px;
+    height: 200px;
+    position: relative;
+    background-size: 80px 82px, 100% auto, 100% auto;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 245px;
+    height: 289px;
+    position: relative;
+    margin: 0;
+    background-position: 84px 56px, center, center;
+    background-size: 80px 82px, 100% auto, auto 100%;
+  }
+
+}
+
+.banner__text {
+  color: @white-base;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  padding-top: 186px;
+
+  @media (min-width: @tablet-width) {
+    position: absolute;
+    width: 161px;
+    top: 71px;
+    right: 124px;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+  }
+
+  @media (min-width: @desktop-width) {
+    position: static;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 185px;
+  }
+}

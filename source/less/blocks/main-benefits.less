@@ -1,0 +1,198 @@
+.main-benefits {
+  width: 280px;
+  margin: 0 auto;
+
+  @media (min-width: @tablet-width) {
+    width: 708px;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 1220px;
+  }
+}
+
+.benefits-list {
+  margin: 0;
+  padding: 0;
+  list-style: 0;
+  margin-bottom: 50px;
+
+  @media (min-width: @tablet-width) {
+    display: grid;
+    grid-template-columns: 247px 247px;
+    column-gap: 137px;
+    row-gap: 37px;
+    margin-bottom: 90px;
+  }
+
+  @media (min-width: @desktop-width) {
+    // display: flex;
+    // justify-content: space-between;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 60px;
+
+    margin-bottom: 70px;
+  }
+}
+
+.main-benefits__item {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: 0;
+  margin-bottom: 20px;
+  padding-left: 80px;
+
+  @media (min-width: @tablet-width) {
+    padding: 0;
+    padding-top: 150px;
+    margin: 0;
+    padding-bottom: 57px;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 247px;
+  }
+}
+
+// .main-benefits__item--leaf {
+//   @media (min-width: @desktop-width) {
+//     width: 250px;
+//   }
+// }
+
+.main-benefits__item--leaf::before {
+  content: '';
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: @green-base;
+  background-image: url('/img/icon-leaf.svg');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+
+  @media (min-width: @tablet-width) {
+    width: 80px;
+    height: 80px;
+    top: 40px;
+  }
+}
+
+.main-benefits__item--leaf::after {
+  @media (min-width: @tablet-width) {
+    content: '1';
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    font-family: "Oswald", serif;
+    font-weight: 400;
+    font-size: 280px;
+    line-height: 280px;
+    color: @grey-button;
+  }
+}
+
+.main-benefits__item--powder::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  width: 60px;
+  height: 60px;
+  background-color: @green-base;
+  background-image: url('/img/icon-powder.svg');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+
+  @media (min-width: @tablet-width) {
+    width: 80px;
+    height: 80px;
+    top: 40px;
+  }
+}
+
+.main-benefits__item--powder::after {
+  @media (min-width: @tablet-width) {
+    content: '2';
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    font-family: "Oswald", serif;
+    font-weight: 400;
+    font-size: 280px;
+    line-height: 280px;
+    color: @grey-button;
+  }
+}
+
+.main-benefits__item--eat::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  width: 60px;
+  height: 60px;
+  background-color: @green-base;
+  background-image: url('/img/icon-eat.svg');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+
+  @media (min-width: @tablet-width) {
+    width: 80px;
+    height: 80px;
+    top: 40px;
+  }
+}
+
+.main-benefits__item--eat::after {
+  @media (min-width: @tablet-width) {
+    content: '3';
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    font-family: "Oswald", serif;
+    font-weight: 400;
+    font-size: 280px;
+    line-height: 280px;
+    color: @grey-button;
+  }
+}
+
+.main-benefits__item--weight::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  width: 60px;
+  height: 60px;
+  background-color: @green-base;
+  background-image: url('/img/icon-alarm.svg');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+
+  @media (min-width: @tablet-width) {
+    width: 80px;
+    height: 80px;
+    top: 40px;
+  }
+}
+
+.main-benefits__item--weight::after {
+  @media (min-width: @tablet-width) {
+    content: '4';
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    font-family: "Oswald", serif;
+    font-weight: 400;
+    font-size: 280px;
+    line-height: 280px;
+    color: @grey-button;
+  }
+}

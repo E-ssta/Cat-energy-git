@@ -1526,7 +1526,7 @@ textarea::placeholder {
 }
 .main-info {
   position: relative;
-  background-color: #68B738;
+  background-color: rgba(104, 183, 56, 0.85);
   background-image: linear-gradient(to bottom, rgba(104, 183, 56, 0.85) 302px, #FFFFFF 302px), url("/img/background-cat.jpg");
   background-position: 50% 0;
   background-repeat: no-repeat;
@@ -1544,6 +1544,18 @@ textarea::placeholder {
   }
 }
 @media (min-width: 1440px) {
+  .main-info::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: -200px;
+    bottom: 0;
+    right: 0;
+    left: 50%;
+    background-color: rgba(104, 183, 56, 0.85);
+  }
+}
+@media (min-width: 1440px) {
   .main-info::after {
     content: '';
     position: absolute;
@@ -1552,7 +1564,9 @@ textarea::placeholder {
     bottom: 0;
     right: 0;
     left: 50%;
-    background-color: #68B738;
+    background-color: rgba(104, 183, 56, 0.85);
+    background-image: url("/img/background-cat-desktop.jpg");
+    background-size: contain;
     background-position: 0 100%;
     background-repeat: no-repeat;
   }

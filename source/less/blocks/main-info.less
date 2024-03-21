@@ -1,6 +1,6 @@
 .main-info {
   position: relative;
-  background-color: @green-base;
+  background-color: fade(@green-base, 85%);
   background-image: linear-gradient(to bottom, fade(@green-base, 85%) 302px, @white-base 302px), url("/img/background-cat.jpg");
   background-position: 50% 0;
   background-repeat: no-repeat;
@@ -15,6 +15,19 @@
     background: none;
   }
 
+  &::before {
+    @media (min-width: @desktop-width) {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      top: -200px;
+      bottom: 0;
+      right: 0;
+      left: 50%;
+      background-color: fade(@green-base, 85%);
+    }
+  }
+
   &::after {
     @media (min-width: @desktop-width) {
       content: '';
@@ -24,8 +37,9 @@
       bottom: 0;
       right: 0;
       left: 50%;
-      // background-image: url("/img/background-cat.jpg");
-      background-color: @green-base;
+      background-color: fade(@green-base, 85%);
+      background-image: url("/img/background-cat-desktop.jpg");
+      background-size: contain;
       background-position: 0 100%;
       background-repeat: no-repeat;
     }

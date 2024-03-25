@@ -83,18 +83,29 @@
   width: 280px;
   height: 290px;
   margin: 0 auto;
-  background-color: #68B738;
-  background-image: url("/img/icon-gift.svg"), url("/img/background-green.png"), url("/img/banner-background.jpg");
+  background-color: rgba(104, 183, 56, 0.85);
+  background-image: url("/img/icon-gift.svg"), url("/img/background-green.png"), url("/img/banner-background-mobile.png");
   background-size: 78px 80px, 100% auto, 100% auto;
   background-repeat: no-repeat, repeat, no-repeat;
   background-position: 101px 58px, center, center;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+  .banner {
+    background-image: url("/img/icon-gift.svg"), url("/img/background-green.png"), url("/img/banner-background-mobile@2x.png");
+  }
 }
 @media (min-width: 768px) {
   .banner {
     width: 708px;
     height: 200px;
     position: relative;
+    background-image: url("/img/icon-gift.svg"), url("/img/background-green.png"), url("/img/banner-background-tablet.png");
     background-size: 80px 82px, 100% auto, 100% auto;
+  }
+}
+@media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 768px) and (min-resolution: 2dppx) {
+  .banner {
+    background-image: url("/img/icon-gift.svg"), url("/img/background-green.png"), url("/img/banner-background-tablet@2x.png");
   }
 }
 @media (min-width: 1440px) {
@@ -103,8 +114,14 @@
     height: 289px;
     position: relative;
     margin: 0;
+    background-image: url("/img/icon-gift.svg"), url("/img/background-green.png"), url("/img/banner-background-desktop.png");
     background-position: 84px 56px, center, center;
     background-size: 80px 82px, 100% auto, auto 100%;
+  }
+}
+@media (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1440px) and (min-resolution: 2dppx) {
+  .banner {
+    background-image: url("/img/icon-gift.svg"), url("/img/background-green.png"), url("/img/banner-background-desktop@2x.png");
   }
 }
 .banner__text {
@@ -348,7 +365,11 @@
     margin-bottom: 34px;
     width: 168px;
     height: 200px;
+    align-items: end;
   }
+}
+.card__image-inner {
+  margin-top: 28px;
 }
 .card__description {
   padding: 0;
@@ -808,6 +829,11 @@
     flex-direction: column;
   }
 }
+.example-wrapper-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row: 15px;
+}
 .page-example__title {
   font-family: "Oswald", serif;
   font-weight: 400;
@@ -973,18 +999,23 @@
   display: block;
   margin: 0 auto;
   margin-bottom: 15px;
-}
-.main-example__photo--tablet {
-  display: none;
+  grid-column: 1/2;
 }
 @media (min-width: 768px) {
-  .main-example__photo--mobile {
-    display: none;
-  }
-  .main-example__photo--tablet {
-    display: block;
-    margin: 0 auto;
+  .main-example__photo {
+    margin: 0 0 0 auto;
     margin-bottom: 25px;
+    align-self: end;
+  }
+}
+.main-example__photo-skinny {
+  display: none;
+  grid-column: 2/3;
+}
+@media (min-width: 768px) {
+  .main-example__photo-skinny {
+    display: block;
+    margin: 0 auto 0 0;
   }
 }
 .main-example__toggle {
@@ -994,11 +1025,13 @@
   display: flex;
   gap: 13px;
   justify-content: space-between;
+  grid-column: 1/2;
 }
 @media (min-width: 768px) {
   .main-example__toggle {
     width: 592px;
     padding-bottom: 56px;
+    grid-column: 1/-1;
   }
 }
 .main-example__indicator {
@@ -1532,6 +1565,11 @@ textarea::placeholder {
   background-repeat: no-repeat;
   background-size: 100%, 320px 302px;
 }
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+  .main-info {
+    background-image: linear-gradient(to bottom, rgba(104, 183, 56, 0.85) 302px, #FFFFFF 302px), url("/img/background-cat@2x.jpg");
+  }
+}
 @media (min-width: 768px) {
   .main-info {
     background-color: transparent;
@@ -1569,6 +1607,11 @@ textarea::placeholder {
     background-size: contain;
     background-position: 0 100%;
     background-repeat: no-repeat;
+  }
+}
+@media (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1440px) and (min-resolution: 2dppx) {
+  .main-info::after {
+    background-image: url("/img/background-cat-desktop@2x.jpg");
   }
 }
 .main-info__container {
@@ -1780,6 +1823,10 @@ textarea::placeholder {
     top: 65px;
     left: 0;
     z-index: 2;
+  }
+  .no-js .main-nav__menu {
+    display: block;
+    position: static;
   }
 }
 @media (min-width: 768px) {

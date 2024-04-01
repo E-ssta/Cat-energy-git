@@ -81,16 +81,9 @@
 }
 
 .main-form__list-item{
-  padding-top: 6px;
-  padding-bottom: 6px;
 
   &:not(:last-child) {
     margin-bottom: 13px;
-  }
-
-  @media (min-width: @tablet-width) {
-    padding-top: 5px;
-    padding-bottom: 5px;
   }
 }
 
@@ -123,13 +116,12 @@
     height: 40px;
     top: -4px;
   }
+
 }
-// .control--radio {
-// &:disabled {
-//   border: 1px solid #BABABA;
-//   opacity: 0.3;
-// }
-// }
+
+.control--radio:disabled + .control__mark--radio + .control__label{
+    opacity: 0.3;
+}
 
 .main-form__list-control .control--radio:checked + .control__mark--radio::after {
   content: '';
@@ -260,6 +252,11 @@
 
 }
 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
 .main-form__label-name {
   display: block;
   min-width: max-content;
@@ -269,23 +266,45 @@
   margin: 0;
   flex-grow: 1;
   min-width: 100px;
+  min-height: 45px;
   width: min-content;
   margin-left: 13px;
   padding-left: 15px;
   padding-top: 14px;
   padding-bottom: 14px;
   border: 1px solid #e7e7e7;
+  font-family: "Oswald", serif;
+  font-weight: 400;
+  color: @grey-text-base;
+  font-size: 16px;
+  line-height: 18px;
+  text-transform: uppercase;
+
+  @media (min-width: @tablet-width) {
+    font-size: 20px;
+    line-height: 29px;
+  }
 
   &:hover {
     border: 1px solid @border-form;
   }
 
   &:focus {
-    border: 2px solid @grey-text-base;
+    outline: 2px solid @grey-text-base;
+
+    & + .main-form__field-icon {
+      fill: @green-base;
+      color: @green-base;
+    }
   }
 
   &--error {
-    border: 2px solid #FF8282;
+    outline: 2px solid #FF8282;
+
+    & + .main-form__field-icon {
+      fill: #FF8282;
+      color: #FF8282;
+    }
   }
 
   @media (min-width: @tablet-width) {
@@ -295,6 +314,8 @@
     line-height: 29px;
   }
 }
+
+
 
 .main-form__data-more .main-form__field {
   margin-left: 0;
@@ -352,8 +373,6 @@
 
 .main-form__list-add-item {
   margin-bottom: 13px;
-  padding-top: 5px;
-  padding-bottom: 7px;
 
   @media (min-width: @tablet-width) {
     margin-bottom: 0;
@@ -367,6 +386,11 @@
 
 .main-form__list-add-item .main-form__list-control {
   margin-left: 0;
+}
+
+.control__label {
+  display: inline-block;
+  padding: 5px 0 7px;
 }
 
 .control__mark--checkbox {
@@ -391,16 +415,25 @@
 .main-form__list-control .control--checkbox:checked + .control__mark--checkbox::after {
   content: '';
   position: absolute;
-  width: 26px;
-  height: 26px;
+  // width: 30px;
+  // height: 30px;
   background-image: url("/img/icon-checked.svg");
   background-repeat: no-repeat;
   background-position: center;
+  background-size: 18px 14px;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   margin: auto;
+
+  @media (min-width: @tablet-width) {
+    background-size: 24px 19px;
+  }
+}
+
+.control--checkbox:disabled + .control__mark--checkbox + .control__label{
+  opacity: 0.3;
 }
 
 .main-form__field[type="email"] {
@@ -422,42 +455,9 @@
   margin: auto;
 }
 
-.main-form__field[type="email"], .main-form__field[type="tel"] {
-&:hover {
-  border: 1px solid @border-form;
-}
-
-&:focus {
-  outline: none;
-  border: 2px solid @grey-text-base;
-
-  // .main-form__field-icon {
-  //   fill: @green-base;
-  // }
-}
-
-// &--error {
-//   border: 2px solid #FF8282;
-
-//   .main-form__field-icon {
-//     stroke: #FF8282;
-//   }
-// }
-}
-
 
 input::placeholder {
-  font-family: "Oswald", serif;
-  font-weight: 400;
   color: @grey-text-base;
-  font-size: 16px;
-  line-height: 18px;
-  text-transform: uppercase;
-
-  @media (min-width: @tablet-width) {
-    font-size: 20px;
-    line-height: 29px;
-  }
 }
 
 textarea::placeholder {

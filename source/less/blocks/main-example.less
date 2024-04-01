@@ -314,27 +314,31 @@
   line-height: 20px;
   padding: 5px 10px;
   cursor: pointer;
+  position: relative;
 
   @media (min-width: @tablet-width) {
     font-size: 20px;
     line-height: 29px;
-    // &::after {
-    //   content: '';
-    //   bottom: -5px;
-    //   left: 10px;
-    //   right: 10px;
-    //   height: 1px;
-    //   background-image: ;
-    // }
-
-    border-bottom: 1px dotted @grey-icon;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 10px;
+      right: 10px;
+      height: 1px;
+      border-bottom: 1px dotted @grey-icon;
+    }
 
     &:hover {
+      &::after{
       border-bottom: 1px solid @grey-icon;
+      }
     }
 
     &:active {
+      &::after {
       border-bottom: none;
+      }
     }
   }
 }

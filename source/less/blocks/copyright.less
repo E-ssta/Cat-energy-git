@@ -1,0 +1,41 @@
+.copyright {
+  margin: 0;
+  width: 280px;
+  padding: 22px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (min-width: @tablet-width) {
+    width: 163px;
+    padding: 0;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: @grey-text-base;
+
+    &:hover .copyright__svg {
+      color: @green-base;
+      fill: @green-base;
+    }
+
+    &:active {
+      opacity: 0.3;
+      .copyright__svg {
+        color: @green-base;
+        fill: @green-base;
+      }
+    }
+  }
+
+  &__text {
+    margin: 0;
+    padding: 0;
+
+    @media (min-width: @tablet-width) {
+      padding-top: 6px;
+      padding-bottom: 10px;
+    }
+ }
+}

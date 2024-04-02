@@ -62,6 +62,7 @@
 }
 
 .main-contacts__adress-text {
+  margin: 0;
   line-height: 20px;
 
   @media (min-width: @tablet-width) {
@@ -75,6 +76,13 @@
 .main-contacts__map {
   display: block;
   margin: 0 auto;
+  width: 100%;
+  height: 362px;
+  border: none;
+
+  @media (min-width: @tablet-width) {
+    height: 400px;
+  }
 }
 
 // .main-contacts__map--mobile {

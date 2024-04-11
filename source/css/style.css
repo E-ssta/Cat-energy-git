@@ -21,11 +21,13 @@
 @media (min-width: 768px) {
   .add-products__all-wrapper {
     width: 708px;
+    margin-bottom: 76px;
   }
 }
 @media (min-width: 1440px) {
   .add-products__all-wrapper {
     width: 1220px;
+    margin-bottom: 86px;
   }
 }
 .add-products__title {
@@ -64,8 +66,9 @@
 }
 @media (min-width: 1440px) {
   .add-products__wrapper {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    gap: 79px;
+    grid-template-columns: 73% 20%;
   }
 }
 .add-products__list {
@@ -76,7 +79,8 @@
 }
 @media (min-width: 1440px) {
   .add-products__list {
-    width: 896px;
+    grid-column: 1/2;
+    margin-bottom: 0;
   }
 }
 .banner {
@@ -111,7 +115,8 @@
 @media (min-width: 1440px) {
   .banner {
     width: 245px;
-    height: 289px;
+    grid-column: 2/3;
+    height: 100%;
     position: relative;
     margin: 0;
     background-image: url("/img/icon-gift.svg"), url("/img/background-green.png"), url("/img/banner-background-desktop.png");
@@ -1212,6 +1217,7 @@
     width: 100%;
     margin: 0;
     padding: 0;
+    grid-column: 1/2;
   }
 }
 .main-form__list-wrapper {
@@ -1228,8 +1234,9 @@
 }
 @media (min-width: 1440px) {
   .main-form__list-wrapper {
-    width: 568px;
+    width: 100%;
     margin: 0;
+    grid-column: 2/3;
   }
 }
 .main-form__list {
@@ -1343,6 +1350,7 @@
 @media (min-width: 1440px) {
   .main-form__data-contact-wrapper {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     gap: 80px;
   }
@@ -1411,6 +1419,9 @@
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
 }
 .main-form__label-name {
   display: block;
@@ -1912,6 +1923,7 @@ textarea::placeholder {
     width: 1220px;
     margin: 0 auto;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
   }
 }
@@ -1968,18 +1980,21 @@ textarea::placeholder {
   line-height: 37px;
   text-transform: uppercase;
   text-align: left;
+  max-width: 160px;
 }
 @media (min-width: 768px) {
   .main-programms__title {
     font-size: 36px;
     line-height: 36px;
     margin-bottom: 24px;
+    max-width: 340px;
   }
 }
 @media (min-width: 1440px) {
   .main-programms__title {
     margin: 0;
     padding: 0;
+    max-width: 290px;
   }
 }
 .main-program__icon--cat-slim {
@@ -2191,6 +2206,7 @@ textarea::placeholder {
   .nav-list {
     width: 440px;
     display: flex;
+    flex-wrap: wrap;
     background-color: transparent;
     justify-content: space-between;
     align-items: flex-end;
@@ -2542,6 +2558,7 @@ textarea::placeholder {
   padding: 20px 0;
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
   gap: 35px;
   width: 100%;
   justify-content: center;

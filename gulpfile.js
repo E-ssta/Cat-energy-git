@@ -3,7 +3,7 @@ import plumber from 'gulp-plumber';
 import less from 'gulp-less';
 import postcss from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
-import browser from 'browser-sync';
+// import browser from 'browser-sync';
 import htmlmin from 'gulp-htmlmin';
 import csso from 'postcss-csso';
 import rename from 'gulp-rename';
@@ -26,7 +26,7 @@ export const styles = () => {
     ]))
     .pipe(rename("style.min.css"))
     .pipe(gulp.dest('build/css', { sourcemaps: '.' }))
-    .pipe(browser.stream());
+    .pipe(sync.stream());
 }
 
 // HTML
@@ -97,8 +97,6 @@ const copy = (done) => {
 // Clean
 
 export const clean = () => {
-  // return del("build");
-
   return deleteAsync("build");
 }
 
@@ -106,7 +104,7 @@ export const clean = () => {
 // Server
 
 const server = (done) => {
-  browser.init({
+  sync.init({
     server: {
       baseDir: 'build'
     },
@@ -130,7 +128,7 @@ const watcher = () => {
   gulp.watch('source/less/**/*.less', gulp.series(styles));
   gulp.watch('source/js/**/*.js', gulp.series(scripts, reload));
   gulp.watch('source/*.html', gulp.series(html, reload));
-  gulp.watch('source/*.html').on('change', browser.reload);
+  gulp.watch('source/*.html').on('change', sync.reload);
 }
 
 // Build

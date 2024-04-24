@@ -1,13 +1,13 @@
 .main-info {
   position: relative;
   background-color: fade(@green-base, 85%);
-  background-image: linear-gradient(to bottom, fade(@green-base, 85%) 302px, @white-base 302px), url("/img/background-cat.jpg");
+  background-image: linear-gradient(to bottom, fade(@green-base, 85%) 302px, @white-base 302px), url("../img/background-cat.jpg");
   background-position: 50% 0;
   background-repeat: no-repeat;
   background-size: 100%, 320px 302px;
 
   @media (min-resolution: 2dppx) {
-    background-image: linear-gradient(to bottom, fade(@green-base, 85%) 302px, @white-base 302px), url("/img/background-cat@2x.jpg");
+    background-image: linear-gradient(to bottom, fade(@green-base, 85%) 302px, @white-base 302px), url("../img/background-cat@2x.jpg");
   }
 
   @media (min-width: @tablet-width) {
@@ -42,13 +42,13 @@
       right: 0;
       left: 50%;
       background-color: fade(@green-base, 85%);
-      background-image: url("/img/background-cat-desktop.jpg");
+      background-image: url("../img/background-cat-desktop.jpg");
       background-size: contain;
       background-position: 0 100%;
       background-repeat: no-repeat;
 
       @media (min-resolution: 2dppx) {
-        background-image: url("/img/background-cat-desktop@2x.jpg");
+        background-image: url("../img/background-cat-desktop@2x.jpg");
       }
     }
   }

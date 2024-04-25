@@ -31,7 +31,7 @@ export const styles = () => {
 
 // HTML
 
-const html = () => {
+export const html = () => {
   return gulp.src("source/*.html")
     .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(gulp.dest("build"));
@@ -40,29 +40,30 @@ const html = () => {
 
 // Scripts
 
-const scripts = () => {
+export const scripts = () => {
   return gulp.src("source/js/*.js")
     .pipe(terser())
     .pipe(rename("app.min.js"))
     .pipe(gulp.dest("build/js"))
+    .pipe(sync.stream());
 }
 
 // Images
 
-const optimizeImages = () => {
+export const optimizeImages = () => {
   return gulp.src("source/img/**/*.{png,jpg,svg}")
     .pipe(squoosh())
     .pipe(gulp.dest("build/img"))
 }
 
-const copyImages = () => {
+export const copyImages = () => {
   return gulp.src("source/img/**/*.{png,jpg,svg}")
     .pipe(gulp.dest("build/img"))
 }
 
 // WebP
 
-const createWebp = () => {
+export const createWebp = () => {
   return gulp.src("source/img/**/*.{jpg,png}")
     .pipe(webp({quality: 90}))
     .pipe(gulp.dest("build/img"))
@@ -70,7 +71,7 @@ const createWebp = () => {
 
 // Sprite
 
-const sprite = () => {
+export const sprite = () => {
   return gulp.src("source/img/icons/*.svg")
     .pipe(svgstore({
       inlineSvg: true
@@ -81,11 +82,12 @@ const sprite = () => {
 
 // Copy
 
-const copy = (done) => {
+export const copy = (done) => {
   gulp.src([
     "source/fonts/*.{woff2,woff}",
     "source/*.ico",
     "source/img/**/*.svg",
+    "source/*.webmanifest",
     "!source/img/icons/*.svg",
   ], {
     base: "source"
@@ -100,6 +102,12 @@ export const clean = () => {
   return deleteAsync("build");
 }
 
+// Reload
+
+const reload = (done) => {
+  sync.reload();
+  done();
+}
 
 // Server
 
@@ -112,13 +120,6 @@ const server = (done) => {
     notify: false,
     ui: false,
   });
-  done();
-}
-
-// Reload
-
-const reload = (done) => {
-  sync.reload();
   done();
 }
 
